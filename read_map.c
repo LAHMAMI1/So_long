@@ -6,16 +6,17 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 21:28:12 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/23 04:59:51 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/26 03:41:06 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-char *read_map(int fd)
+char **read_map(int fd)
 {
 	char *map;
 	char *line;
+	char **split_map;
 
 	map = ft_calloc(1, 1);
 	while (1)
@@ -25,5 +26,6 @@ char *read_map(int fd)
 			break;
 		map = ft_strjoin(map, line);
 	}
-	return (map);
+	split_map = ft_split(map, '\n');
+	return (split_map);
 }

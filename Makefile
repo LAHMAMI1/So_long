@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2022/12/25 18:51:32 by olahmami         ###   ########.fr        #
+#    Updated: 2022/12/26 00:51:29 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME		=	so_long
 CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	read_map.c \
+				check_map.c \
 				main.c
 
 LIBS		=	libft.a
@@ -26,7 +27,7 @@ MLX_macos	=	-lmlx -framework OpenGL -framework AppKit
 all: $(LIBS) $(NAME)
 
 $(NAME): $(SRCS)
-	$(CC) -I includes $(CFLAGS) $(SRCS) $(INCLUDES) $(MLX_macos) -o $(NAME)
+	@$(CC) -I includes $(CFLAGS) $(SRCS) $(INCLUDES) $(MLX_macos) -o $(NAME)
 
 libs: $(LIBS)
 

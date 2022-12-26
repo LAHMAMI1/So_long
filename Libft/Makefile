@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 02:23:02 by olahmami          #+#    #+#              #
-#    Updated: 2022/12/25 18:56:07 by olahmami         ###   ########.fr        #
+#    Updated: 2022/12/25 23:06:22 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,12 +32,12 @@ OBJ = ${SRCS:.c=.o}
 all : ${NAME}
 
 ${NAME} : ${OBJ}
-	ar rc ${NAME} ${OBJ}
+	@ar rc ${NAME} ${OBJ}
 
 clean :
-	rm -f ${OBJ}
+	@rm -f ${OBJ}
 
 fclean : clean
-	rm -f ${NAME}
+	@rm -f ${NAME}
 
 re: fclean all
