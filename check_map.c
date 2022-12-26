@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 21:05:13 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/26 04:42:45 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/26 18:31:33 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int oneChar_map(char **split_map)
 		}
 		y++;
 	}
-	if (count[0] != 1 && count[1] == 0 && count[2] != 1)
+	if (count[0] != 1 || count[1] == 0 || count[2] != 1)
 		return (1);
 	return (0);
-}
+} 
