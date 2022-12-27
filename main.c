@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/26 18:21:16 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/27 04:46:32 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int main()
 	char **split_map;
 	// int s;
 
-	if (fd == -1)
-	{
-		perror("Error opening file");
-		return (0);
-	}
+	// if (fd == -1)
+	// {
+	// 	perror("Error opening file");
+	// 	return (0);
+	// }
 	// mlx_ptr = mlx_init();
 	// win_ptr = mlx_new_window(mlx_ptr, 1000, 1000, "So_long");
 	// img = mlx_xpm_file_to_image(mlx_ptr, "./ccc.xpm", &width, &height);
@@ -54,10 +54,9 @@ int main()
 
 	// mlx_loop(mlx_ptr);
 
-	if (oneChar_map(split_map) == 1)
+	if (wall_map(split_map) == 1)
 		printf("False");
 	else
 		printf("True");
-
 	return (0);
 }
