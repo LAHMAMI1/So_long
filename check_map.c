@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 21:05:13 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/27 04:47:37 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/27 23:03:28 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,23 @@ int rectangular_map(char **split_map)
 static int ft_strchr_WM(char *split_map, int c)
 {
 	unsigned int i;
-	
+
 	i = 0;
 	while (split_map[i] && (char)c == split_map[i])
 		i++;
-	if (i <= ft_strlen(split_map))
+	if (i < ft_strlen(split_map))
 		return (1);
 	return (0);
+}
+
+static int count_line(char **str)
+{
+	int y;
+	
+	y = 0;
+	while (str[y])
+		y++;
+	return (y);
 }
 
 int wall_map(char **split_map)
@@ -99,12 +109,12 @@ int wall_map(char **split_map)
 	y = 0;
 	while (split_map[y])
 	{
-		if (ft_strchr_WM(split_map[0], '1') == 1 || ft_strchr_WM(split_map[ft_strlen(*split_map) - 1], '1') == 1)
+		if (ft_strchr_WM(split_map[0], '1') == 1 || ft_strchr_WM(split_map[count_line(split_map) - 1], '1') == 1)
 			return (1);
 		x = 0;
 		while (split_map[y][x])
 		{
-			if (split_map[y][x] != '1' || split_map[y][ft_strlen(split_map[y] - 1)] != '1')
+			if (split_map[y][0] != '1' || split_map[y][ft_strlen(*split_map) - 1] != '1')
 				return (1);
 			x++;
 		}
@@ -112,3 +122,4 @@ int wall_map(char **split_map)
 	}
 	return (0);
 }
+
