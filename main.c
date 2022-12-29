@@ -6,21 +6,36 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/27 04:46:32 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/29 03:38:13 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int main()
+int main(int argc, char *argv[])
 {
 	// void *mlx_ptr;
 	// void *win_ptr;
 	// void *img;
 	// int width, height;
-	int fd = open("map.ber", O_RDONLY);
+	if (argc != 2)
+	{
+		ft_putstr_fd("Error:\n",2);
+		perror("");
+		exit(1);
+	}
+	if (name_map(argv[1]) == 1)
+	{
+		ft_putstr_fd("Error:\n",2);
+		perror("");
+		exit(1);
+	}
+	
+	// int fd = open("map.ber", O_RDONLY);
 	// int x;
 	// int y;
+
+	int fd = open(argv[1], O_RDONLY);
 	char **split_map;
 	// int s;
 
@@ -34,6 +49,7 @@ int main()
 	// img = mlx_xpm_file_to_image(mlx_ptr, "./ccc.xpm", &width, &height);
 
 	split_map = read_map(fd);
+	all_check(split_map);
 	// read_map(fd);
 
 	// y = 0;
@@ -54,9 +70,9 @@ int main()
 
 	// mlx_loop(mlx_ptr);
 
-	if (wall_map(split_map) == 1)
-		printf("False");
-	else
-		printf("True");
+	// if (wall_map(split_map) == 1)
+	// 	printf("False");
+	// else
+	// 	printf("True");
 	return (0);
 }

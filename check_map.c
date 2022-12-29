@@ -6,12 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 21:05:13 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/27 23:03:28 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/29 03:53:27 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+//The map can be composed of only these 5 characters
 int composed_map(char **split_map)
 {
 	int y;
@@ -32,6 +33,7 @@ int composed_map(char **split_map)
 	return (0);
 }
 
+//The map must contain 1 exit, at least 1 collectible, and 1 starting position to be valid.
 int oneChar_map(char **split_map)
 {
 	int y;
@@ -62,6 +64,7 @@ int oneChar_map(char **split_map)
 	return (0);
 }
 
+//The map must be rectangular.
 int rectangular_map(char **split_map)
 {
 	int y;
@@ -79,6 +82,7 @@ int rectangular_map(char **split_map)
 	return (0);
 }
 
+//The map must be closed/surrounded by walls.
 static int ft_strchr_WM(char *split_map, int c)
 {
 	unsigned int i;
@@ -123,3 +127,25 @@ int wall_map(char **split_map)
 	return (0);
 }
 
+//Valid path
+
+
+//name of map file
+int name_map(char *name)
+{
+	if (ft_strncmp(name + (ft_strlen(name) - 4), ".ber", 4))
+		return (1);
+	return (0);
+}
+
+//ALL checkers for map
+void all_check(char **split_map)
+{
+	if (composed_map(split_map) == 1 || oneChar_map(split_map) == 1 || rectangular_map(split_map) == 1 || wall_map(split_map) == 1)
+	{
+		printf("False");
+		exit(1);
+	}
+	else
+		printf("True");
+}

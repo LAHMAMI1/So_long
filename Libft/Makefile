@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/23 02:23:02 by olahmami          #+#    #+#              #
-#    Updated: 2022/12/25 23:06:22 by olahmami         ###   ########.fr        #
+#    Updated: 2022/12/29 03:06:27 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,9 @@ SRCS = 	ft_strlen.c \
 		ft_substr.c \
 		ft_strjoin.c \
 		ft_split.c \
+		ft_strncmp.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
 		get_next_line_utils.c \
 		get_next_line.c
 

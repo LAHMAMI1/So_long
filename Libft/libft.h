@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:21:36 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/25 18:38:46 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/29 03:06:54 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ void	ft_bzero(void *s, size_t n);
 char	**ft_split(char const *s, char c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(char *s1);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 /*Get_next_line*/
 # ifndef BUFFER_SIZE
