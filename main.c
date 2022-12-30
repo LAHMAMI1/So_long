@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/29 03:38:13 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/30 04:23:06 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,14 @@ int main(int argc, char *argv[])
 		perror("");
 		exit(1);
 	}
-	
 	// int fd = open("map.ber", O_RDONLY);
 	// int x;
 	// int y;
 
 	int fd = open(argv[1], O_RDONLY);
-	char **split_map;
+	map map;
+	player player;
+	// char **split_map;
 	// int s;
 
 	// if (fd == -1)
@@ -48,8 +49,8 @@ int main(int argc, char *argv[])
 	// win_ptr = mlx_new_window(mlx_ptr, 1000, 1000, "So_long");
 	// img = mlx_xpm_file_to_image(mlx_ptr, "./ccc.xpm", &width, &height);
 
-	split_map = read_map(fd);
-	all_check(split_map);
+	map.split_map = read_map(fd, &map);
+	all_check(&map, &player);
 	// read_map(fd);
 
 	// y = 0;

@@ -6,58 +6,63 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/25 21:05:13 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/29 03:53:27 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/30 04:12:03 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
 //The map can be composed of only these 5 characters
-int composed_map(char **split_map)
+int composed_map(map *map)
 {
-	int y;
-	int x;
+	// int y;
+	// int x;
+	
 
-	y = 0;
-	while (split_map[y])
+	map->y = 0;
+	while (map->split_map[map->y])
 	{
-		x = 0;
-		while (split_map[y][x])
+		map->x = 0;
+		while (map->split_map[map->y][map->x])
 		{
-			if (split_map[y][x] != '0' && split_map[y][x] != '1' && split_map[y][x] != 'C' && split_map[y][x] != 'E' && split_map[y][x] != 'P')
+			if (map->split_map[map->y][map->x] != '0' && map->split_map[map->y][map->x] != '1' && map->split_map[map->y][map->x] != 'C' && map->split_map[map->y][map->x] != 'E' && map->split_map[map->y][map->x] != 'P')
 				return (1);
-			x++;
+			map->x++;
 		}
-		y++;
+		map->y++;
 	}
 	return (0);
 }
 
 //The map must contain 1 exit, at least 1 collectible, and 1 starting position to be valid.
-int oneChar_map(char **split_map)
+int oneChar_map(map *map, player *player)
 {
-	int y;
-	int x;
+	// int y;
+	// int x;
 	int count[3];
 
 	count[0] = 0;
 	count[1] = 0;
 	count[2] = 0;
-	y = 0;
-	while (split_map[y])
+	map->y = 0;
+	while (map->split_map[map->y])
 	{
-		x = 0;
-		while (split_map[y][x])
+		map->x = 0;
+		while (map->split_map[map->y][map->x])
 		{
-			if (split_map[y][x] == 'P')
+			if (map->split_map[map->y][map->x] == 'P')
+			{
+				player->pos_x = map->x;
+				player->pos_y = map->y;
 				count[0]++;
-			if (split_map[y][x] == 'C')
+			}
+			if (map->split_map[map->y][map->x] == 'C')
 				count[1]++;
-			if (split_map[y][x] == 'E')
+			if (map->split_map[map->y][map->x] == 'E')
 				count[2]++;
-			x++;
+			map->x++;
 		}
-		y++;
+		map->y++;
 	}
 	if (count[0] != 1 || count[1] == 0 || count[2] != 1)
 		return (1);
@@ -65,17 +70,17 @@ int oneChar_map(char **split_map)
 }
 
 //The map must be rectangular.
-int rectangular_map(char **split_map)
+int rectangular_map(map *map)
 {
-	int y;
+	// int y;
 	int increment;
 
-	y = 0;
-	increment = y + 1;
-	while (split_map[y])
+	map->y = 0;
+	increment = map->y + 1;
+	while (map->split_map[map->y])
 	{
-		if (ft_strlen(split_map[y]) == ft_strlen(split_map[increment]))
-			y++;
+		if (ft_strlen(map->split_map[map->y]) == ft_strlen(map->split_map[increment]))
+			map->y++;
 		else
 			return (1);
 	}
@@ -105,24 +110,24 @@ static int count_line(char **str)
 	return (y);
 }
 
-int wall_map(char **split_map)
+int wall_map(map *map)
 {
-	int y;
-	int x;
+	// int y;
+	// int x;
 
-	y = 0;
-	while (split_map[y])
+	map->y = 0;
+	while (map->split_map[map->y])
 	{
-		if (ft_strchr_WM(split_map[0], '1') == 1 || ft_strchr_WM(split_map[count_line(split_map) - 1], '1') == 1)
+		if (ft_strchr_WM(map->split_map[0], '1') == 1 || ft_strchr_WM(map->split_map[count_line(map->split_map) - 1], '1') == 1)
 			return (1);
-		x = 0;
-		while (split_map[y][x])
+		map->x = 0;
+		while (map->split_map[map->y][map->x])
 		{
-			if (split_map[y][0] != '1' || split_map[y][ft_strlen(*split_map) - 1] != '1')
+			if (map->split_map[map->y][0] != '1' || map->split_map[map->y][ft_strlen(map->split_map[map->y]) - 1] != '1')
 				return (1);
-			x++;
+			map->x++;
 		}
-		y++;
+		map->y++;
 	}
 	return (0);
 }
@@ -139,9 +144,9 @@ int name_map(char *name)
 }
 
 //ALL checkers for map
-void all_check(char **split_map)
+void all_check(map *map, player *player)
 {
-	if (composed_map(split_map) == 1 || oneChar_map(split_map) == 1 || rectangular_map(split_map) == 1 || wall_map(split_map) == 1)
+	if (composed_map(map) == 1 || oneChar_map(map, player) == 1 || rectangular_map(map) == 1 || wall_map(map) == 1)
 	{
 		printf("False");
 		exit(1);
