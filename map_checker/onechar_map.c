@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:02:04 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 08:28:19 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/31 23:39:51 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ int	onechar_map(map *map, player *player)
 	map->count[0] = 0;
 	map->count[1] = 0;
 	map->count[2] = 0;
-	map->y = -1;
-	while (map->split_map[map->y++])
+	map->y = 0;
+	while (map->split_map[map->y])
 	{
-		map->x = -1;
-		while (map->split_map[map->y][map->x++])
+		map->x = 0;
+		while (map->split_map[map->y][map->x])
 		{
 			if (map->split_map[map->y][map->x] == 'P')
 			{
@@ -33,7 +33,9 @@ int	onechar_map(map *map, player *player)
 				map->count[1]++;
 			if (map->split_map[map->y][map->x] == 'E')
 				map->count[2]++;
+			map->x++;
 		}
+		map->y++;
 	}
 	if (map->count[0] != 1 || map->count[1] == 0 || map->count[2] != 1)
 		return (1);
