@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 08:30:23 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/31 08:40:59 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int main(int argc, char *argv[])
 	map.dup_map = map_dup(&map);
 	onechar_map(&map, &player);
 	flood_fill_p(player.pos_x, player.pos_y, map.dup_map);
-	// flood_fill_E(player.pos_x, player.pos_y, map.dup_map);
 	int i;
 	i = 0;
 	while (map.dup_map[i])
