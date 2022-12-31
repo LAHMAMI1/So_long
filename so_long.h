@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 05:23:59 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/31 08:19:18 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ typedef struct PLAYER
 /*So_long*/
 char **read_map(int fd, map *map);
 int composed_map(map *map);
-int oneChar_map(map *map, player *player);
+int onechar_map(map *map, player *player);
 int rectangular_map(map *map);
 int wall_map(map *map);
 void all_check(map *map, player *player);
 int name_map(char *name);
 char **map_dup(map *map);
-void	flood_fill_P(int pos_x, int pos_y, char **map);
-void	flood_fill_E(int pos_x, int pos_y, char **map);
+void	flood_fill_p(int pos_x, int pos_y, char **map);
+void	flood_fill_e(int pos_x, int pos_y, char **map);
+int	count_line(map *map);
 
 #endif
