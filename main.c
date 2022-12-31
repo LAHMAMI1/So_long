@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/30 04:23:06 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/31 03:47:06 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ int main(int argc, char *argv[])
 		perror("");
 		exit(1);
 	}
-	// int fd = open("map.ber", O_RDONLY);
-	// int x;
-	// int y;
 
 	int fd = open(argv[1], O_RDONLY);
 	map map;
@@ -50,9 +47,17 @@ int main(int argc, char *argv[])
 	// img = mlx_xpm_file_to_image(mlx_ptr, "./ccc.xpm", &width, &height);
 
 	map.split_map = read_map(fd, &map);
-	all_check(&map, &player);
-	// read_map(fd);
-
+	map.dup_map = map_dup(&map);
+	oneChar_map(&map, &player);
+	flood_fill_P(player.pos_x, player.pos_y, map.dup_map);
+	// flood_fill_E(player.pos_x, player.pos_y, map.dup_map);
+	int i;
+		i = 0;
+	while (map.dup_map[i])
+	{
+		printf("%s\n",map.dup_map[i]);
+		i++;
+	}
 	// y = 0;
 	// s = 0;
 	// while (split_map[y])
@@ -70,10 +75,5 @@ int main(int argc, char *argv[])
 	// }
 
 	// mlx_loop(mlx_ptr);
-
-	// if (wall_map(split_map) == 1)
-	// 	printf("False");
-	// else
-	// 	printf("True");
 	return (0);
 }

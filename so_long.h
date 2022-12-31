@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/30 04:12:30 by olahmami         ###   ########.fr       */
+/*   Updated: 2022/12/31 05:23:59 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ typedef struct MAP
 	char **split_map;
 	int y;
 	int x;
+	int lines;
+	char **dup_map;
+	int count[3];
 }map;
 typedef struct PLAYER
 {
@@ -38,5 +41,8 @@ int rectangular_map(map *map);
 int wall_map(map *map);
 void all_check(map *map, player *player);
 int name_map(char *name);
+char **map_dup(map *map);
+void	flood_fill_P(int pos_x, int pos_y, char **map);
+void	flood_fill_E(int pos_x, int pos_y, char **map);
 
 #endif

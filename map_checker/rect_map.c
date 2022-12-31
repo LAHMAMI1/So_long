@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   rect_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 21:28:12 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 03:37:56 by olahmami         ###   ########.fr       */
+/*   Created: 2022/12/31 05:19:58 by olahmami          #+#    #+#             */
+/*   Updated: 2022/12/31 05:26:26 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../so_long.h"
 
-char **read_map(int fd, map *map)
+int	rectangular_map(map *map)
 {
-	char *str;
-	char *line;
+	int	increment;
 
-	str = ft_calloc(1, 1);
-	while (1)
+	map->y = 0;
+	increment = map->y + 1;
+	while (map->split_map[map->y])
 	{
-		line = get_next_line(fd);
-		if (line == '\0')
-			break;
-		str = ft_strjoin(str, line);
+		if (ft_strlen(map->split_map[map->y])
+			== ft_strlen(map->split_map[increment]))
+			map->y++;
+		else
+			return (1);
 	}
-	map->split_map = ft_split(str, '\n');
-	return (map->split_map);
+	return (0);
 }

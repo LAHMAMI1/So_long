@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2022/12/28 20:42:29 by olahmami         ###   ########.fr        #
+#    Updated: 2022/12/30 04:50:45 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ MLX_macos	=	-lmlx -framework OpenGL -framework AppKit
 all: $(LIBS) $(NAME)
 
 $(NAME): $(SRCS)
-	@$(CC) -I includes $(CFLAGS) $(SRCS) $(INCLUDES) $(MLX_macos) -o $(NAME)
+	$(CC) -I includes $(CFLAGS) $(SRCS) $(INCLUDES) $(MLX_macos) -o $(NAME)
 
 libs: $(LIBS)
 
