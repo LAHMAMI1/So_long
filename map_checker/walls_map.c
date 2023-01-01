@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_walls.c                                      :+:      :+:    :+:   */
+/*   walls_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:34:28 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 05:50:29 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/01 08:35:17 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,6 @@ int	count_line(map *map)
 
 int	wall_map(map *map)
 {
-	int	len;
-
-	len = ft_strlen(map->split_map[map->y]);
 	map->y = 0;
 	while (map->split_map[map->y])
 	{
@@ -47,7 +44,7 @@ int	wall_map(map *map)
 		while (map->split_map[map->y][map->x])
 		{
 			if (map->split_map[map->y][0] != '1'
-				|| map->split_map[map->y][len - 1] != '1')
+				|| map->split_map[map->y][ft_strlen(map->split_map[map->y]) - 1] != '1')
 				return (1);
 			map->x++;
 		}

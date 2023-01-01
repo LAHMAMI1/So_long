@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 22:50:42 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/01 09:14:01 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ char **map_dup(map *map);
 void	flood_fill_p(int pos_x, int pos_y, char **map);
 void	flood_fill_e(int pos_x, int pos_y, char **map);
 int	count_line(map *map);
+int check_path(map *map, char c);
 
 #endif
