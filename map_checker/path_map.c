@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:33:55 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/01 09:12:08 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/02 07:23:10 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char **map_dup(map *map)
 	int i;
 
 	i = 0;
-	map->dup_map = malloc(map->lines * (sizeof(char *)));
+	map->dup_map = malloc((map->lines + 1) * (sizeof(char *)));
 	while (map->split_map[i])
 	{
 		map->dup_map[i] = ft_strdup(map->split_map[i]);

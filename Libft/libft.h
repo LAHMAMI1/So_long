@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:21:36 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/29 03:06:54 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/02 03:57:02 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_putstr_fd(char *s, int fd);
 
 /*Get_next_line*/
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 7
+#  define BUFFER_SIZE 10
 # endif
 
 char	*get_next_line(int fd);
