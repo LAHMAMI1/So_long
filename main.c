@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/02 07:01:33 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/03 01:14:43 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ int main(int argc, char *argv[])
 	int fd = open(argv[1], O_RDONLY);
 	map map;
 	player player;
+	show show;
 	map.split_map = read_map(fd, &map);
 	all_check(&map, &player);
-	showmap(&map);
-	
+	showmap(&map, &show);
+
 	return (0);
 }

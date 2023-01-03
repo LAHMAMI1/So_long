@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/02 00:42:56 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/03 02:13:36 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,25 @@ typedef struct MAP
 	int y;
 	int x;
 	int lines;
+	int len;
 	char **dup_map;
 	int count[3];
 }map;
+
 typedef struct PLAYER
 {
 	int pos_x;
 	int pos_y;
 }player;
+
+typedef struct SHOW
+{
+	void *mlx_ptr;
+	void *win_ptr;
+	void *img;
+	int width;
+	int height;
+}show;
 /*So_long*/
 char **read_map(int fd, map *map);
 int composed_map(map *map);
@@ -46,6 +57,6 @@ void	flood_fill_p(int pos_x, int pos_y, char **map);
 void	flood_fill_e(int pos_x, int pos_y, char **map);
 int	count_line(map *map);
 int check_path(map *map, char c);
-void showmap(map *map);
+void showmap(map *map, show *show);
 
 #endif
