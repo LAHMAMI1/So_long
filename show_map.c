@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/04 04:29:34 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 08:07:51 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,4 @@ void showmap(t_map *map)
 		}
 		map->y++;
 	}
-	printf("\nmap\n");
-	int i = 0;
-	while (map->split_map[i])
-	{
-		printf("%s\n", map->split_map[i]);
-		i++;
-	}
-	printf("\nmap\n");
 }
