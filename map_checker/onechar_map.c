@@ -6,13 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:02:04 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 23:39:51 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 01:21:14 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	onechar_map(map *map, player *player)
+int	onechar_map(t_map *map, t_player *player)
 {
 	map->count[0] = 0;
 	map->count[1] = 0;

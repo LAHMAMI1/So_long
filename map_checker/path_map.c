@@ -6,13 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:33:55 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/02 07:23:10 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 01:20:47 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-char **map_dup(map *map)
+char **map_dup(t_map *map)
 {
 	int i;
 
@@ -53,7 +53,7 @@ void flood_fill_e(int pos_x, int pos_y, char **map)
 	return;
 }
 
-int check_path(map *map, char c)
+int check_path(t_map *map, char c)
 {
 	map->y = 0;
 	while (map->dup_map[map->y])

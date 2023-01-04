@@ -6,13 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:42:49 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/02 06:40:26 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 01:21:14 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-void all_check(map *map, player *player)
+void all_check(t_map *map, t_player *player)
 {
 	if (composed_map(map) == 1)
 	{

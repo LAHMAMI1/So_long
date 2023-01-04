@@ -6,13 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:19:58 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/31 05:26:26 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 01:20:47 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	rectangular_map(map *map)
+int	rectangular_map(t_map *map)
 {
 	int	increment;
 

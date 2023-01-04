@@ -6,38 +6,42 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/03 02:46:08 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 04:29:34 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void put_img(map *map, show *show, char *path_img, char c)
+static void put_img(t_map *map, char *path_img, char c)
 {
-	show->img = mlx_xpm_file_to_image(show->mlx_ptr, path_img, &show->width, &show->height);
+	map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, path_img, &map->show->width, &map->show->height);
 	if (map->split_map[map->y][map->x] == c)
-		mlx_put_image_to_window(show->mlx_ptr, show->win_ptr, show->img, map->x *  show->width, map->y * show->height);
+		mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr, map->show->img, map->x * map->show->width, map->y * map->show->height);
 }
 
-void showmap(map *map, show *show)
+void showmap(t_map *map)
 {
-	map->len = ft_strlen(map->split_map[0]);
-	show->mlx_ptr = mlx_init();
-	show->win_ptr = mlx_new_window(show->mlx_ptr, 80 * map->len, 80 * map->lines, "So_long");
 	map->y = 0;
 	while (map->split_map[map->y])
 	{
 		map->x = 0;
 		while (map->split_map[map->y][map->x])
 		{
-			put_img(map, show, "./img/0.xpm", '0');
-			put_img(map, show, "./img/1.xpm", '1');
-			put_img(map, show, "./img/P.xpm", 'P');
-			put_img(map, show, "./img/C.xpm", 'C');
-			put_img(map, show, "./img/E0.xpm", 'E');
+			put_img(map, "./img/0.xpm", '0');
+			put_img(map, "./img/1.xpm", '1');
+			put_img(map, "./img/P.xpm", 'P');
+			put_img(map, "./img/C.xpm", 'C');
+			put_img(map, "./img/E0.xpm", 'E');
 			map->x++;
 		}
 		map->y++;
 	}
-	mlx_loop(show->mlx_ptr);
+	printf("\nmap\n");
+	int i = 0;
+	while (map->split_map[i])
+	{
+		printf("%s\n", map->split_map[i]);
+		i++;
+	}
+	printf("\nmap\n");
 }

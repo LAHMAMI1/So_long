@@ -6,13 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 04:46:44 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/01 08:00:08 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 01:20:47 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../so_long.h"
 
-int	composed_map(map *map)
+int	composed_map(t_map *map)
 {
 	map->y = 0;
 	while (map->split_map[map->y])

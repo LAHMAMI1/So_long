@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:34:28 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/03 02:46:35 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/04 01:20:47 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	ft_strchr_wm(char *split_map, int c)
 	return (0);
 }
 
-int	count_line(map *map)
+int	count_line(t_map *map)
 {
 	map->lines = 0;
 	while (map->split_map[map->lines])
@@ -32,7 +32,7 @@ int	count_line(map *map)
 	return (map->lines);
 }
 
-int	wall_map(map *map)
+int	wall_map(t_map *map)
 {
 	map->y = 0;
 	while (map->split_map[map->y])
