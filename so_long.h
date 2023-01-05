@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/04 03:25:23 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/05 08:52:33 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ void flood_fill_p(int pos_x, int pos_y, char **map);
 void flood_fill_e(int pos_x, int pos_y, char **map);
 int count_line(t_map *map);
 int check_path(t_map *map, char c);
+void put_img(t_map *map, char *path_img, char c);
 void showmap(t_map *map);
 int move_map(int keycode, t_map *map);
 

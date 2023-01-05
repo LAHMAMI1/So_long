@@ -6,17 +6,19 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/04 08:07:51 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/05 12:02:05 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void put_img(t_map *map, char *path_img, char c)
+void put_img(t_map *map, char *path_img, char c)
 {
-	map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, path_img, &map->show->width, &map->show->height);
+	map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, path_img,
+										   &map->show->width, &map->show->height);
 	if (map->split_map[map->y][map->x] == c)
-		mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr, map->show->img, map->x * map->show->width, map->y * map->show->height);
+		mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr, map->show->img,
+								map->x * map->show->width, map->y * map->show->height);
 }
 
 void showmap(t_map *map)

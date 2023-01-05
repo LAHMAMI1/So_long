@@ -6,13 +6,13 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/04 03:25:45 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/05 04:56:25 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			=	cc
 NAME		=	so_long
-CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror #-fsanitize=address
 
 SRCS		=	read_map.c \
 				map_checker/name_map.c \
