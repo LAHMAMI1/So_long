@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 22:21:36 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/02 03:57:02 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 08:44:18 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ char	*ft_strdup(char *s1);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_fd(int nb, int fd);
 
 /*Get_next_line*/
 # ifndef BUFFER_SIZE

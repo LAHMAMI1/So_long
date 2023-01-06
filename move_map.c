@@ -6,16 +6,26 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 04:46:56 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/06 05:31:36 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 08:30:43 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+// void num_mov(t_map *map)
+// {
+// 	if ()
+// 	{
+// 		/* code */
+// 	}
+	
+// }
+
 static void move(t_map *map, int pos_y, int pos_x)
 {
 	if (map->split_map[pos_y][pos_x] == '0')
 	{
+		map->mov += 1;
 		map->split_map[map->player->pos_y][map->player->pos_x] = '0';
 		map->split_map[pos_y][pos_x] = 'P';
 		map->player->pos_y = pos_y;
@@ -24,6 +34,7 @@ static void move(t_map *map, int pos_y, int pos_x)
 	}
 	else if (map->split_map[pos_y][pos_x] == 'C')
 	{
+		map->mov += 1;
 		map->check_c++;
 		map->split_map[map->player->pos_y][map->player->pos_x] = '0';
 		map->split_map[pos_y][pos_x] = 'P';

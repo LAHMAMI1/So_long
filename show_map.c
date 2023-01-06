@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/06 05:31:02 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 08:46:51 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void put_img(t_map *map, char *path_img, char c)
 
 void showmap(t_map *map)
 {
+	ft_putstr_fd("the cureent number of mouvements: ", 1);
+	ft_putnbr_fd(map->mov, 1);
+	ft_putchar_fd('\n', 1);
 	map->y = 0;
 	while (map->split_map[map->y])
 	{

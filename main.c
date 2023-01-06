@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/06 05:41:12 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 08:21:43 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ int main(int argc, char *argv[])
 	map.keycode = 1;
 	showmap(&map);
 	map.check_c = 0;
+	map.mov = 0;
 	mlx_hook(map.show->win_ptr, 2, 0, move_map, &map);
 	mlx_loop(map.show->mlx_ptr);
 	return (0);
