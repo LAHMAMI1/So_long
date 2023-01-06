@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/05 08:52:33 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 05:30:45 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_map
 	int len;
 	char **dup_map;
 	int count[3];
+	int check_c;
+	int keycode;
 	t_show *show;
 	t_player *player;
 } t_map;

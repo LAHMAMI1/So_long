@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/05 12:02:05 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 05:31:02 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ void showmap(t_map *map)
 		{
 			put_img(map, "./img/0.xpm", '0');
 			put_img(map, "./img/1.xpm", '1');
-			put_img(map, "./img/P.xpm", 'P');
 			put_img(map, "./img/C.xpm", 'C');
 			put_img(map, "./img/E0.xpm", 'E');
+			if (map->check_c == map->count[1])
+				put_img(map, "./img/E1.xpm", 'E');
+			if (map->keycode == 0)
+				put_img(map, "./img/PL.xpm", 'P');
+			else
+				put_img(map, "./img/PR.xpm", 'P');
 			map->x++;
 		}
 		map->y++;

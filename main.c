@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/05 11:39:33 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 05:41:12 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ int main(int argc, char *argv[])
 	map.show->mlx_ptr = mlx_init();
 	map.len = ft_strlen(map.split_map[0]);
 	map.show->win_ptr = mlx_new_window(map.show->mlx_ptr, 80 * map.len, 80 * map.lines, "So_long");
+	map.keycode = 1;
 	showmap(&map);
+	map.check_c = 0;
 	mlx_hook(map.show->win_ptr, 2, 0, move_map, &map);
 	mlx_loop(map.show->mlx_ptr);
 	return (0);
