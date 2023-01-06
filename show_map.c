@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/06 08:46:51 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 14:27:54 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ void showmap(t_map *map)
 				put_img(map, "./img/E1.xpm", 'E');
 			if (map->keycode == 0)
 				put_img(map, "./img/PL.xpm", 'P');
+			else if (map->keycode == 1)
+				put_img(map, "./img/PD.xpm", 'P');
+			else if (map->keycode == 13)
+				put_img(map, "./img/PU.xpm", 'P');
 			else
 				put_img(map, "./img/PR.xpm", 'P');
 			map->x++;

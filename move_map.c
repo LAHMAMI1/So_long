@@ -6,20 +6,11 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 04:46:56 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/06 08:30:43 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/06 14:25:07 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-
-// void num_mov(t_map *map)
-// {
-// 	if ()
-// 	{
-// 		/* code */
-// 	}
-	
-// }
 
 static void move(t_map *map, int pos_y, int pos_x)
 {
@@ -51,14 +42,20 @@ int move_map(int keycode, t_map *map)
 	if (keycode == 53)
 		exit(0);
 	if (keycode == 13)
+	{
+		map->keycode = keycode;
 		move(map, map->player->pos_y - 1, map->player->pos_x);
+	}
 	if (keycode == 0)
 	{
 		map->keycode = keycode;
 		move(map, map->player->pos_y, map->player->pos_x - 1);
 	}
 	if (keycode == 1)
+	{
+		map->keycode = keycode;
 		move(map, map->player->pos_y + 1, map->player->pos_x);
+	}
 	if (keycode == 2)
 	{
 		map->keycode = keycode;
