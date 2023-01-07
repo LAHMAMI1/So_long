@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:42:49 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/04 01:21:14 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/07 20:19:29 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ void all_check(t_map *map, t_player *player)
 		ft_putstr_fd("Error:\nIt must have one exit, at least one collectible, and a starting position.", 2);
 		exit(1);
 	}
-	else if (rectangular_map(map) == 1)
+	else if (rectangular_map(map) == 1 || no_line(map) == 1)
 	{
-		ft_putstr_fd("Error:\nIt must be must be rectangular", 2);
+		ft_putstr_fd("Error:\nIt must be rectangular", 2);
 		exit(1);
 	}
 	else if (wall_map(map) == 1)

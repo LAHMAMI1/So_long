@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/06 07:56:06 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/07 17:32:32 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef struct s_player
 
 typedef struct s_map
 {
+	char *str;
 	char **split_map;
 	int y;
 	int x;
@@ -55,6 +56,7 @@ char **read_map(int fd, t_map *map);
 int composed_map(t_map *map);
 int onechar_map(t_map *map, t_player *player);
 int rectangular_map(t_map *map);
+int no_line(t_map *map);
 int wall_map(t_map *map);
 void all_check(t_map *map, t_player *player);
 int name_map(char *name);
