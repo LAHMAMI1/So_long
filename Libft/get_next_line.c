@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:49:13 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/25 18:36:23 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/08 14:34:15 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_read(int fd, char *buff)
 	if (!str)
 		return (0);
 	check = 1;
-	while (ft_strchr_GNL(buff, '\n') == 0 && check != 0)
+	while (ft_strchr_gnl(buff, '\n') == 0 && check != 0)
 	{
 		check = read(fd, str, BUFFER_SIZE);
 		if (check == -1)
@@ -33,7 +33,7 @@ char	*ft_read(int fd, char *buff)
 			return (0);
 		}
 		str[check] = '\0';
-		buff = ft_strjoin_GNL(buff, str);
+		buff = ft_strjoin_gnl(buff, str);
 	}
 	free(str);
 	return (buff);

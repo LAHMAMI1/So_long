@@ -6,13 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 23:14:31 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/25 18:35:52 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/08 10:57:03 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_strncpy(char *dest, const char *src, size_t n)
+static char	*ft_strncpy(char *dest, char *src, size_t n)
 {
 	size_t	i;
 
@@ -26,7 +26,7 @@ static char	*ft_strncpy(char *dest, const char *src, size_t n)
 	return (dest);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	size_t	s1len;
 	size_t	s2len;
@@ -44,5 +44,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ft_strncpy(p, s1, s1len);
 		ft_strncpy(p + s1len, s2, s2len + 1);
 	}
+	free(s1);
 	return (p);
 }

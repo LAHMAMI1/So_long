@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/07 20:20:40 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/08 15:33:59 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME		=	so_long
 CFLAGS		=	-Wall -Wextra -Werror #-fsanitize=address
 
 SRCS		=	read_map.c \
+				map_checker/utils.c \
 				map_checker/name_map.c \
 				map_checker/composed_map.c \
 				map_checker/onechar_map.c \

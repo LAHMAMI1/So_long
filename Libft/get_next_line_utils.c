@@ -6,15 +6,15 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/18 14:49:11 by olahmami          #+#    #+#             */
-/*   Updated: 2022/12/25 18:37:07 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/08 14:37:38 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strlen_n(char *s, int c)
+int	ft_strlen_n(char *s, int c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] && s[i] != c)
@@ -22,9 +22,9 @@ int ft_strlen_n(char *s, int c)
 	return (i);
 }
 
-int ft_strchr_GNL(char *s, int c)
+int	ft_strchr_gnl(char *s, int c)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i])
@@ -38,11 +38,11 @@ int ft_strchr_GNL(char *s, int c)
 	return (0);
 }
 
-char *ft_strjoin_GNL(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
-	char *p;
-	int i;
-	int j;
+	char	*p;
+	int		i;
+	int		j;
 
 	p = malloc(ft_strlen_n(s1, '\0') + ft_strlen_n(s2, '\0') + 1);
 	if (!p)
