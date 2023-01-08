@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:33:55 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 15:31:54 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/08 20:34:43 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	flood_fill_p(int pos_x, int pos_y, char **map)
 {
 	if (map[pos_y][pos_x] != '0' && map[pos_y][pos_x] != 'C'
-		&& map[pos_y][pos_x] != 'P' && map[pos_y][pos_x] != 'E')
+		&& map[pos_y][pos_x] != 'P')
 		return ;
 	map[pos_y][pos_x] = 'F';
 	flood_fill_p(pos_x + 1, pos_y, map);
