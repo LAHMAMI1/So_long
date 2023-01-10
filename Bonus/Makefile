@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/08 15:33:59 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/09 11:33:17 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS		=	read_map.c \
 				map_checker/check_all.c \
 				show_map.c \
 				move_map.c \
+				enemies.c \
 				main.c
 
 LIBS		=	libft.a

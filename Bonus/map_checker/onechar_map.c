@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:02:04 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 19:36:31 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/09 10:09:35 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ static void	onechar_sup(t_map *map, t_player *player)
 	if (map->split_map[map->y][map->x] == 'E')
 		map->count[2]++;
 	if (map->split_map[map->y][map->x] == 'M')
+	{
 		map->count[3]++;
+		player->m_x = map->x;
+		player->m_y = map->y;
+	}
 }
 
 int	onechar_map(t_map *map, t_player *player)

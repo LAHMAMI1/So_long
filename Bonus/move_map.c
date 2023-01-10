@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 04:46:56 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 21:20:00 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/10 22:04:44 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static void	move(t_map *map, int pos_y, int pos_x)
 		map->split_map[pos_y][pos_x] = 'P';
 		map->player->pos_y = pos_y;
 		map->player->pos_x = pos_x;
-		showmap(map);
 	}
 	else if (map->split_map[pos_y][pos_x] == 'C')
 	{
@@ -31,7 +30,6 @@ static void	move(t_map *map, int pos_y, int pos_x)
 		map->split_map[pos_y][pos_x] = 'P';
 		map->player->pos_y = pos_y;
 		map->player->pos_x = pos_x;
-		showmap(map);
 	}
 	else if (map->split_map[pos_y][pos_x]
 			== 'E' && map->check_c == map->count[1])
@@ -44,6 +42,7 @@ static void	move(t_map *map, int pos_y, int pos_x)
 		ft_putstr_fd("YOU LOSE", 2);
 		exit(0);
 	}
+	showmap(map);
 }
 
 int	move_map(int keycode, t_map *map)

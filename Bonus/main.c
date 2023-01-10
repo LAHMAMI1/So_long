@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 17:19:30 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/10 23:11:43 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int	main(int argc, char *argv[])
 	showmap(&m);
 	m.check_c = 0;
 	m.mov = 0;
+	mlx_loop_hook(m.show->mlx_ptr, move_m, &m);
 	mlx_hook(m.show->win_ptr, 2, 0, move_map, &m);
 	mlx_hook(m.show->win_ptr, 17, 0, (void *)exit, &m);
 	mlx_loop(m.show->mlx_ptr);
