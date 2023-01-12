@@ -6,13 +6,13 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/12 01:17:53 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/12 18:17:11 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			=	cc
 NAME		=	so_long
-CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	read_map.c \
 				map_checker/utils.c \
@@ -25,6 +25,7 @@ SRCS		=	read_map.c \
 				map_checker/check_all.c \
 				show_map.c \
 				move_map.c \
+				button.c \
 				main.c
 
 LIBS		=	libft.a

@@ -6,13 +6,13 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/12 01:26:46 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 16:26:34 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-static void	check_arg(int argc, char *argv[])
+static void	check_arg(int argc, char *argv[], t_map *map)
 {
 	if (argc != 2)
 	{
@@ -24,31 +24,30 @@ static void	check_arg(int argc, char *argv[])
 		ft_putstr_fd("Error:\nInvalid file name\nTry ./so_long 'map.ber'", 2);
 		exit(1);
 	}
-}
-
-int	main(int argc, char *argv[])
-{
-	int			fd;
-	t_map		m;
-	t_player	player;
-	t_show		s;
-
-	check_arg(argc, argv);
-	fd = open(argv[1], O_RDONLY | O_DIRECTORY);
-	if (fd > 0)
+	map->fd = open(argv[1], O_RDONLY | O_DIRECTORY);
+	if (map->fd > 0)
 	{
-		ft_putstr_fd("Error:\nInvalid Map", 2);
+		ft_putstr_fd("Error:\nIt's a directory", 2);
 		exit(1);
 	}
-	fd = open(argv[1], O_RDONLY);
-	if (fd < 0)
+	map->fd = open(argv[1], O_RDONLY);
+	if (map->fd < 0)
 	{
 		ft_putstr_fd("Error:\nMap file does not exist", 2);
 		exit(1);
 	}
+}
+
+int	main(int argc, char *argv[])
+{
+	t_map		m;
+	t_player	player;
+	t_show		s;
+
+	check_arg(argc, argv, &m);
 	m.show = &s;
 	m.player = &player;
-	m.split_map = read_map(fd, &m);
+	m.split_map = read_map(m.fd, &m);
 	all_check(&m, &player);
 	m.show->mlx_ptr = mlx_init();
 	m.len = ft_strlen(m.split_map[0]);
