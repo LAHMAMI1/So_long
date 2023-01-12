@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/18 02:57:25 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/10 14:19:52 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 01:26:46 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,25 @@ int	main(int argc, char *argv[])
 	t_show		s;
 
 	check_arg(argc, argv);
+	fd = open(argv[1], O_RDONLY | O_DIRECTORY);
+	if (fd > 0)
+	{
+		ft_putstr_fd("Error:\nInvalid Map", 2);
+		exit(1);
+	}
 	fd = open(argv[1], O_RDONLY);
+	if (fd < 0)
+	{
+		ft_putstr_fd("Error:\nMap file does not exist", 2);
+		exit(1);
+	}
 	m.show = &s;
 	m.player = &player;
 	m.split_map = read_map(fd, &m);
 	all_check(&m, &player);
 	m.show->mlx_ptr = mlx_init();
 	m.len = ft_strlen(m.split_map[0]);
-	s.win_ptr = mlx_new_window(s.mlx_ptr, 80 * m.len, 80 * m.lines, "So_long");
+	s.win_ptr = mlx_new_window(s.mlx_ptr, 70 * m.len, 70 * m.lines, "So_long");
 	m.keycode = 2;
 	showmap(&m);
 	m.check_c = 0;

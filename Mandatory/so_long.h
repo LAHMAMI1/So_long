@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/10 14:19:17 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 01:25:47 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <mlx.h>
 # include <fcntl.h>
 # include "Libft/libft.h"
+#include <stdio.h>
 
 typedef struct s_show
 {
@@ -67,5 +68,6 @@ int		move_map(int keycode, t_map *map);
 int		count_line(t_map *map);
 char	**map_dup(t_map *map);
 int		ft_strchr_wm(char *split_map, int c);
+void	print_m(t_map *map);
 
 #endif
