@@ -6,11 +6,11 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:34:28 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 16:04:09 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:15:24 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 int	wall_map(t_map *map)
 {

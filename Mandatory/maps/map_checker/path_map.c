@@ -6,11 +6,11 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:33:55 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 20:25:55 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:15:14 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 void	flood_fill_p(int pos_x, int pos_y, char **map)
 {

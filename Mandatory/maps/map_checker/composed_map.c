@@ -6,11 +6,11 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 04:46:44 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 14:39:54 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:15:02 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 int	composed_map(t_map *map)
 {

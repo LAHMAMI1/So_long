@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/12 18:17:11 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/12 23:19:27 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,23 +14,23 @@ CC			=	cc
 NAME		=	so_long
 CFLAGS		=	-Wall -Wextra -Werror
 
-SRCS		=	read_map.c \
-				map_checker/utils.c \
-				map_checker/name_map.c \
-				map_checker/composed_map.c \
-				map_checker/onechar_map.c \
-				map_checker/rect_map.c \
-				map_checker/walls_map.c \
-				map_checker/path_map.c \
-				map_checker/check_all.c \
-				show_map.c \
-				move_map.c \
-				button.c \
-				main.c
+SRCS		=	maps/map_checker/utils.c \
+				maps/map_checker/name_map.c \
+				maps/map_checker/composed_map.c \
+				maps/map_checker/onechar_map.c \
+				maps/map_checker/rect_map.c \
+				maps/map_checker/walls_map.c \
+				maps/map_checker/path_map.c \
+				maps/map_checker/check_all.c \
+				maps/game/read_map.c \
+				maps/game/show_map.c \
+				maps/game/move_map.c \
+				maps/game/button.c \
+				so_long.c
 
 LIBS		=	libft.a
 
-INCLUDES	=	$(LIBS:%=Libft/libft.a)
+INCLUDES	=	$(LIBS:%=maps/Libft/libft.a)
 
 MLX_macos	=	-lmlx -framework OpenGL -framework AppKit
 
@@ -44,16 +44,16 @@ $(NAME): $(OBJ)
 libs: $(LIBS)
 
 $(LIBS):
-	@make -C Libft
+	@make -C maps/Libft
 
 clean:
 	@rm -f ${OBJ}
-	@make -C Libft clean
+	@make -C maps/Libft clean
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(INCLUDES)
-	@make -C Libft fclean
+	@make -C maps/Libft fclean
 
 re: fclean all
 

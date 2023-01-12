@@ -6,11 +6,11 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:02:04 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 15:55:50 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:15:11 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../so_long.h"
+#include "../../so_long.h"
 
 static void	onechar_sup(t_map *map, t_player *player)
 {

@@ -6,14 +6,14 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/12 18:05:13 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:14:28 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "Libft/libft.h"
+# include "maps/Libft/libft.h"
 # include <fcntl.h>
 # include <mlx.h>
 

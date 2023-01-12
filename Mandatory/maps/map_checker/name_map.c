@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_map.c                                         :+:      :+:    :+:   */
+/*   name_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 21:28:12 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/08 14:53:43 by olahmami         ###   ########.fr       */
+/*   Created: 2022/12/31 07:39:37 by olahmami          #+#    #+#             */
+/*   Updated: 2023/01/12 23:15:05 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../so_long.h"
 
-char	**read_map(int fd, t_map *map)
+int	name_map(char *name)
 {
-	char	*line;
-
-	map->str = ft_calloc(1, 1);
-	while (1)
-	{
-		line = get_next_line(fd);
-		if (line == '\0')
-			break ;
-		map->str = ft_strjoin(map->str, line);
-		free(line);
-	}
-	map->split_map = ft_split(map->str, '\n');
-	return (map->split_map);
+	if (ft_strncmp(name + (ft_strlen(name) - 4), ".ber", 4))
+		return (1);
+	return (0);
 }
