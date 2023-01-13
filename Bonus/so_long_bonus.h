@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/13 02:17:14 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:33:09 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ typedef struct s_map
 	int			lines;
 	int			len;
 	char		**dup_map;
-	int			count[4];
+	int			count[6];
 	int			check_c;
 	int			keycode;
 	int			mov;

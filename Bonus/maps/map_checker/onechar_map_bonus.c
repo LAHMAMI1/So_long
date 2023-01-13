@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 05:02:04 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/12 23:48:07 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:36:04 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@ static void	onechar_sup(t_map *map, t_player *player)
 		map->count[1]++;
 	if (map->split_map[map->y][map->x] == 'E')
 		map->count[2]++;
+	if (map->split_map[map->y][map->x] == '0')
+		map->count[3]++;
+	if (map->split_map[map->y][map->x] == '1')
+		map->count[4]++;
 	if (map->split_map[map->y][map->x] == 'M')
 	{
-		map->count[3]++;
+		map->count[5]++;
 		player->m_x = map->x;
 		player->m_y = map->y;
 	}
@@ -38,6 +42,8 @@ int	onechar_map(t_map *map, t_player *player)
 	map->count[1] = 0;
 	map->count[2] = 0;
 	map->count[3] = 0;
+	map->count[4] = 0;
+	map->count[5] = 0;
 	map->y = 0;
 	while (map->split_map[map->y])
 	{
@@ -49,8 +55,8 @@ int	onechar_map(t_map *map, t_player *player)
 		}
 		map->y++;
 	}
-	if (map->count[0] != 1 || (map->count[1] || map->count[3]) == 0
-		|| map->count[2] != 1)
+	if (map->count[0] != 1 || map->count[1] == 0 || map->count[2] != 1
+		|| map->count[3] == 0 || map->count[4] == 0 || map->count[5] != 1)
 		return (1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:42:49 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/13 02:58:41 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:40:05 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	all_check(t_map *map, t_player *player)
 {
 	if (composed_map(map) == 1)
 	{
-		ft_putstr_fd("Error:\nShould composed with 0,1,P,C,E", 2);
+		ft_putstr_fd("Error:\nShould be composed with 0,1,P,C,E", 2);
 		exit(1);
 	}
 	else if (onechar_map(map, player) == 1)
