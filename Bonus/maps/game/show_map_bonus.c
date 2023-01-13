@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   show_map.c                                         :+:      :+:    :+:   */
+/*   show_map_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/12 18:28:43 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/13 01:49:08 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../so_long_bonus.h"
 
 void	put_img(t_map *map, char *path_img, char c)
 {
@@ -24,19 +24,18 @@ void	put_img(t_map *map, char *path_img, char c)
 
 void	showmap(t_map *map)
 {
-	mlx_clear_window(map->show->mlx_ptr, map->show->win_ptr);
 	map->y = 0;
 	while (map->split_map[map->y])
 	{
 		map->x = 0;
 		while (map->split_map[map->y][map->x])
 		{
-			put_img(map, "./img/0.xpm", '0');
-			put_img(map, "./img/1.xpm", '1');
-			put_img(map, "./img/C.xpm", 'C');
-			put_img(map, "./img/E0.xpm", 'E');
-			put_img(map, "./img/M.xpm", 'M');
-			put_img(map, "./img/PR.xpm", 'P');
+			put_img(map, "./textures/0.xpm", '0');
+			put_img(map, "./textures/1.xpm", '1');
+			put_img(map, "./textures/C.xpm", 'C');
+			put_img(map, "./textures/E0.xpm", 'E');
+			put_img(map, "./textures/M.xpm", 'M');
+			put_img(map, "./textures/PI.xpm", 'P');
 			map->x++;
 		}
 		map->y++;
@@ -52,7 +51,7 @@ void	move_sup(t_map *map)
 		while (map->split_map[map->y][map->x])
 		{
 			if (map->check_c == map->count[1])
-				put_img(map, "./img/E1.xpm", 'E');
+				put_img(map, "./textures/E1.xpm", 'E');
 			map->x++;
 		}
 		map->y++;

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_all.c                                        :+:      :+:    :+:   */
+/*   check_all_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:42:49 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/12 23:14:54 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/12 23:47:52 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../so_long.h"
+#include "../../so_long_bonus.h"
 
 static void	flood_test(t_map *map, t_player *player)
 {
@@ -33,12 +33,12 @@ void	all_check(t_map *map, t_player *player)
 {
 	if (composed_map(map) == 1)
 	{
-		ft_putstr_fd("Error:\nNot composed with the 5 characters", 2);
+		ft_putstr_fd("Error:\nNot composed with the 6 characters", 2);
 		exit(1);
 	}
 	else if (onechar_map(map, player) == 1)
 	{
-		ft_putstr_fd("Error:\none E, at least one C, and one P", 2);
+		ft_putstr_fd("Error:\none E, at least one C and M, and one P", 2);
 		exit(1);
 	}
 	else if (rectangular_map(map) == 1 || no_line(map) == 1)

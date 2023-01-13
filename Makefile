@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/12 23:19:27 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/13 01:12:38 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,8 @@ SRCS		=	maps/map_checker/utils.c \
 
 LIBS		=	libft.a
 
+BONUS		=	so_long_bonus
+
 INCLUDES	=	$(LIBS:%=maps/Libft/libft.a)
 
 MLX_macos	=	-lmlx -framework OpenGL -framework AppKit
@@ -46,14 +48,21 @@ libs: $(LIBS)
 $(LIBS):
 	@make -C maps/Libft
 
+bonus: $(BONUS)
+
+$(BONUS):
+	@make -C Bonus
+
 clean:
 	@rm -f ${OBJ}
 	@make -C maps/Libft clean
+	@make -C Bonus clean
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(INCLUDES)
 	@make -C maps/Libft fclean
+	@make -C Bonus fclean
 
 re: fclean all
 

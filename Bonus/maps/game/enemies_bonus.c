@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   enemies.c                                          :+:      :+:    :+:   */
+/*   enemies_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 08:57:22 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/11 23:53:08 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/13 01:43:45 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../so_long_bonus.h"
 
 static void put_m(t_map *map, int m_x, int m_y)
 {
 	if (map->split_map[m_y][m_x] == '0')
 	{
-		map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, "./img/0.xpm",
+		map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, "./textures/0.xpm",
 			&map->show->w, &map->show->h);
 		mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr,
 			map->show->img, m_x * map->show->w, m_y * map->show->h);
@@ -24,7 +24,7 @@ static void put_m(t_map *map, int m_x, int m_y)
 	}
 	else if (map->split_map[m_y][m_x] == 'M')
 	{
-		map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, "./img/M.xpm",
+		map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, "./textures/M.xpm",
 			&map->show->w, &map->show->h);
 		mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr,
 			map->show->img, m_x * map->show->w, m_y * map->show->h);

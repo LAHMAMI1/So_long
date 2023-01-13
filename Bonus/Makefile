@@ -6,31 +6,32 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/11 15:46:17 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/13 01:53:39 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			=	cc
-NAME		=	so_long
-CFLAGS		=	-Wall -Wextra -Werror #-fsanitize=address
+NAME		=	so_long_bonus
+CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address
 
-SRCS		=	read_map.c \
-				map_checker/utils.c \
-				map_checker/name_map.c \
-				map_checker/composed_map.c \
-				map_checker/onechar_map.c \
-				map_checker/rect_map.c \
-				map_checker/walls_map.c \
-				map_checker/path_map.c \
-				map_checker/check_all.c \
-				show_map.c \
-				move_map.c \
-				enemies.c \
-				main.c
+SRCS		=	maps/map_checker/utils_bonus.c \
+				maps/map_checker/name_map_bonus.c \
+				maps/map_checker/composed_map_bonus.c \
+				maps/map_checker/onechar_map_bonus.c \
+				maps/map_checker/rect_map_bonus.c \
+				maps/map_checker/walls_map_bonus.c \
+				maps/map_checker/path_map_bonus.c \
+				maps/map_checker/check_all_bonus.c \
+				maps/game/read_map_bonus.c \
+				maps/game/show_map_bonus.c \
+				maps/game/move_map_bonus.c \
+				maps/game/button_bonus.c \
+				maps/game/enemies_bonus.c \
+				so_long_bonus.c
 
 LIBS		=	libft.a
 
-INCLUDES	=	$(LIBS:%=Libft/libft.a)
+INCLUDES	=	$(LIBS:%=maps/Libft/libft.a)
 
 MLX_macos	=	-lmlx -framework OpenGL -framework AppKit
 
@@ -44,16 +45,16 @@ $(NAME): $(OBJ)
 libs: $(LIBS)
 
 $(LIBS):
-	@make -C Libft
+	@make -C maps/Libft
 
 clean:
 	@rm -f ${OBJ}
-	@make -C Libft clean
+	@make -C maps/Libft clean
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(INCLUDES)
-	@make -C Libft fclean
+	@make -C maps/Libft fclean
 
 re: fclean all
 
