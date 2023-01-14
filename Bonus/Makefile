@@ -6,13 +6,13 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/14 03:21:17 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/14 17:04:03 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC			=	cc
 NAME		=	so_long_bonus
-CFLAGS		=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS		=	-Wall -Wextra -Werror
 
 SRCS		=	maps/map_checker/utils_bonus.c \
 				maps/map_checker/name_map_bonus.c \

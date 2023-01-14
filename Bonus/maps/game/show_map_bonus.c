@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/14 04:29:18 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 18:52:43 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,18 @@ void	move_sup(t_map *map)
 		}
 		map->y++;
 	}
+}
+
+void show_count(t_map *map)
+{
+	char *count;
+
+	count = ft_itoa(map->mov);
+	map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, "./textures/1.xpm",
+			&map->show->w, &map->show->h);
+	mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr,
+		map->show->img, 0 * map->show->w, 0 * map->show->h);
+	mlx_destroy_image(map->show->mlx_ptr, map->show->img);
+	mlx_string_put(map->show->mlx_ptr, map->show->win_ptr, 30, 15, 0x000000, count);
+	free(count);
 }

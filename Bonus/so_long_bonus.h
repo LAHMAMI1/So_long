@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/14 03:19:29 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 18:16:31 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,5 @@ void			w(t_map *map, int x, int y);
 void			s(t_map *map, int x, int y);
 void			move_sup(t_map *map);
 int	animation(t_map *map);
+void show_count(t_map *map);
 #endif

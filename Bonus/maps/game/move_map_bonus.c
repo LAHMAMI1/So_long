@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 04:46:56 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/13 01:43:57 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 18:25:25 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ static void	move(t_map *map, int pos_y, int pos_x)
 		exit(0);
 	}
 	move_sup(map);
+	show_count(map);
 }
 
 int	move_map(int keycode, t_map *map)

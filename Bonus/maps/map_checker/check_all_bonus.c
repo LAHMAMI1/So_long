@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:42:49 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/13 18:40:40 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 17:24:39 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	flood_test(t_map *map, t_player *player)
 	flood_fill_p(player->pos_x, player->pos_y, map->dup_map);
 	if (check_path(map, 'C') == 1)
 	{
-		ft_putstr_fd("Error:\nThere still a collectible in the map", 2);
+		ft_putstr_fd("Error:\nCan't reach all collectibles", 2);
 		exit(1);
 	}
 	flood_fill_e(player->pos_x, player->pos_y, map->dup_map);
