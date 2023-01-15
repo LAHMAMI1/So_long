@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/17 18:54:09 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/13 02:37:50 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 23:22:15 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,6 @@ void			d(t_map *map, int x, int y);
 void			w(t_map *map, int x, int y);
 void			s(t_map *map, int x, int y);
 void			move_sup(t_map *map);
+void			put_er_img(t_map *map);
 
 #endif

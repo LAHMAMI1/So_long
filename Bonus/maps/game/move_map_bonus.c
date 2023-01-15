@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 04:46:56 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/14 18:25:25 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 23:26:01 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	put_p(t_map *map, int y, int x)
 	{
 		map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr,
 				"./textures/0.xpm", &map->show->w, &map->show->h);
+		put_er_img(map);
 		mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr,
 			map->show->img, x * map->show->w, y * map->show->h);
 		mlx_destroy_image(map->show->mlx_ptr, map->show->img);

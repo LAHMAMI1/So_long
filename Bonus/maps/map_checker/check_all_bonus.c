@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:42:49 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/14 17:24:39 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/15 00:26:18 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,14 @@ void	all_check(t_map *map, t_player *player)
 	}
 	else if (onechar_map(map, player) == 1)
 	{
-		ft_putstr_fd("Error:\none of the character is missing", 2);
-		ft_putstr_fd(" or there's a double 'E' or 'P'", 2);
+		ft_putstr_fd("Error:\nOne of the character is missing", 2);
+		ft_putstr_fd(" or there's a double 'E' or 'P' or 'M'", 2);
 		exit(1);
 	}
 	else if (rectangular_map(map) == 1 || no_line(map) == 1)
 	{
 		ft_putstr_fd("Error:\nIt must be rectangular", 2);
+		ft_putstr_fd("or there's a new line", 2);
 		exit(1);
 	}
 	else if (wall_map(map) == 1)

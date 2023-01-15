@@ -6,7 +6,7 @@
 #    By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/17 02:11:24 by olahmami          #+#    #+#              #
-#    Updated: 2023/01/14 17:04:03 by olahmami         ###   ########.fr        #
+#    Updated: 2023/01/14 22:47:21 by olahmami         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRCS		=	maps/map_checker/utils_bonus.c \
 				maps/game/move_map_bonus.c \
 				maps/game/button_bonus.c \
 				maps/game/enemies_bonus.c \
-				maps/game/animation.c \
+				maps/game/animation_bonus.c \
 				so_long_bonus.c
 
 LIBS		=	libft.a

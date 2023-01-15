@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/02 00:46:26 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/14 18:52:43 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 23:36:24 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	put_img(t_map *map, char *path_img, char c)
 {
 	map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, path_img,
 			&map->show->w, &map->show->h);
+	put_er_img(map);
 	if (map->split_map[map->y][map->x] == c)
 		mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr,
 			map->show->img, map->x * map->show->w, map->y * map->show->h);
@@ -58,16 +59,18 @@ void	move_sup(t_map *map)
 	}
 }
 
-void show_count(t_map *map)
+void	show_count(t_map *map)
 {
-	char *count;
+	char	*count;
 
 	count = ft_itoa(map->mov);
-	map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr, "./textures/1.xpm",
-			&map->show->w, &map->show->h);
+	map->show->img = mlx_xpm_file_to_image(map->show->mlx_ptr,
+			"./textures/1.xpm", &map->show->w, &map->show->h);
+	put_er_img(map);
 	mlx_put_image_to_window(map->show->mlx_ptr, map->show->win_ptr,
 		map->show->img, 0 * map->show->w, 0 * map->show->h);
 	mlx_destroy_image(map->show->mlx_ptr, map->show->img);
-	mlx_string_put(map->show->mlx_ptr, map->show->win_ptr, 30, 15, 0x000000, count);
+	mlx_string_put(map->show->mlx_ptr, map->show->win_ptr, 25, 25, 0xff0000,
+		count);
 	free(count);
 }

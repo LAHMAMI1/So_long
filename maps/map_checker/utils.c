@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 15:30:51 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/12 23:15:21 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/14 23:22:50 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,13 @@ int	count_line(t_map *map)
 	while (map->split_map[map->lines])
 		map->lines++;
 	return (map->lines);
+}
+
+void	put_er_img(t_map *map)
+{
+	if (!map->show->img)
+	{
+		ft_putstr_fd("Error\nImg does not exist", 2);
+		exit(1);
+	}
 }

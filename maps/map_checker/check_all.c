@@ -6,7 +6,7 @@
 /*   By: olahmami <olahmami@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/31 07:42:49 by olahmami          #+#    #+#             */
-/*   Updated: 2023/01/13 18:40:05 by olahmami         ###   ########.fr       */
+/*   Updated: 2023/01/15 00:19:56 by olahmami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	all_check(t_map *map, t_player *player)
 	else if (rectangular_map(map) == 1 || no_line(map) == 1)
 	{
 		ft_putstr_fd("Error:\nIt must be rectangular", 2);
+		ft_putstr_fd("or there's a new line", 2);
 		exit(1);
 	}
 	else if (wall_map(map) == 1)
