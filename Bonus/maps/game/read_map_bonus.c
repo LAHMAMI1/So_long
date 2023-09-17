@@ -20,7 +20,7 @@ char	**read_map(int fd, t_map *map)
 	while (1)
 	{
 		line = get_next_line(fd);
-		if (line == '\0')
+		if (!line)
 			break ;
 		map->str = ft_strjoin(map->str, line);
 		free(line);
